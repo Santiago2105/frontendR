@@ -1,36 +1,50 @@
-<h2 style="text-align: center;">Reporte de Duración por Álbum</h2>
+<div class="main-container">
+  
+  <h1 class="titulo-reporte">Reporte de Duración por Álbum</h1>
 
-<div class="contenedor-reporte">
+  <div class="contenedor-reporte">
+    
+    <mat-card class="card-reporte grafico">
+      <mat-card-header>
+        <mat-card-title>Gráfico Visual</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="contenido-grafico">
+        <ngx-charts-bar-vertical
+            [view]="[400, 300]"
+            [scheme]="colorScheme" 
+            [results]="chartData"
+            [xAxis]="true"
+            [yAxis]="true"
+            [showXAxisLabel]="true"
+            [showYAxisLabel]="true"
+            xAxisLabel="Álbum"
+            yAxisLabel="Minutos">
+        </ngx-charts-bar-vertical>
+      </mat-card-content>
+    </mat-card>
 
-  <div class="seccion-grafico">
-    <ngx-charts-bar-vertical
-        [view]="[500, 300]"
-        [results]="chartData"
-        [xAxis]="true"
-        [yAxis]="true"
-        [showXAxisLabel]="true"
-        [showYAxisLabel]="true"
-        xAxisLabel="Álbum"
-        yAxisLabel="Minutos">
-    </ngx-charts-bar-vertical>
+    <mat-card class="card-reporte tabla">
+      <mat-card-header>
+        <mat-card-title>Tabla Resumen</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource" class="mi-tabla">
+
+          <ng-container matColumnDef="nombreAlbum">
+            <th mat-header-cell *matHeaderCellDef> Álbum </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreAlbum}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="duracionTotal">
+            <th mat-header-cell *matHeaderCellDef> Duración (min) </th>
+            <td mat-cell *matCellDef="let element"> {{element.duracionTotal}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
   </div>
-
-  <div class="seccion-tabla">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-      <ng-container matColumnDef="nombreAlbum">
-        <th mat-header-cell *matHeaderCellDef style="background-color: #BDB8E0;"> Álbum </th>
-        <td mat-cell *matCellDef="let element"> {{element.nombreAlbum}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="duracionTotal">
-        <th mat-header-cell *matHeaderCellDef style="background-color: #BDB8E0;"> Duración </th>
-        <td mat-cell *matCellDef="let element"> {{element.duracionTotal}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div>
-
 </div>
