@@ -12,13 +12,15 @@ import { autorizacionInterceptor } from './interceptors/autorizacion-interceptor
 import { Login } from './components/login/login';
 import { Home } from './components/home/home';
 import { Header } from './components/header/header';
+import { Reporte01MartinezLinares } from './components/reporte01-martinez-linares/reporte01-martinez-linares';
 
 @NgModule({
   declarations: [
     App,
     Login,
     Home,
-    Header
+    Header,
+    Reporte01MartinezLinares
   ],
   imports: [
     BrowserModule,

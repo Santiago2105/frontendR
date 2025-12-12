@@ -1,27 +1,52 @@
-
 :host {
     display: flex;     
     justify-content: center; 
     align-items: center;    
-    height: 100vh;
+    
+    height: calc(100vh - 64px); 
+    
     width: 100%;
-    background-color: #BDB8E0;
+    background-color: #f5f5f5;
+    overflow: hidden;
 }
+
 .login-container {
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 12px;
+    
+    /* Aquí usamos el color secundario de tu paleta para la tarjeta */
+    background-color: white; 
+    border: 2px solid var(--color3); /* Borde color mostaza */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
+    color: var(--color4); /* Título en naranja oscuro */
 }
 
 .ancho-total {
     width: 100%;
+    margin-bottom: 10px;
 }
 
+/* Estilos para el botón */
+button[mat-flat-button] {
+    width: 100%;
+    padding: 25px 0; /* Botón más alto */
+    font-size: 1.1rem;
+    background-color: var(--color4) !important; /* Naranja oscuro por defecto */
+    color: white !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto Hover solicitado */
+button[mat-flat-button]:hover {
+    background-color: var(--color2) !important; /* Amarillo al pasar el mouse */
+    color: black !important; /* Cambiamos letra a negro para contraste en amarillo */
+}

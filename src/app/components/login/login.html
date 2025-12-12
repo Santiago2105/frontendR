@@ -1,25 +1,23 @@
 <div class="login-container">
-  
-  <h1>Login</h1>
+  <h1>Iniciar Sesión</h1>
 
-<form [formGroup]="loginForm">
-
-<mat-form-field class="ancho-total">
-          <mat-label>Email</mat-label>
-          <mat-icon matPrefix>email</mat-icon>
-          <input matInput formControlName="username" placeholder="example@example.com">
+  <form [formGroup]="loginForm">
+      <mat-form-field class="ancho-total" appearance="outline">
+          <mat-label>Username</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput formControlName="username" placeholder="Ingrese usuario">
       </mat-form-field>
       
-      <br>
-
-      <mat-form-field class="ancho-total">
+      <mat-form-field class="ancho-total" appearance="outline">
           <mat-label>Password</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
           <input type="password" matInput formControlName="password" placeholder="********">        
       </mat-form-field>
-</form>
+  </form>
 
-<br>
- | 
-<button mat-flat-button (click)="Ingresar()" >Ingresar</button>
+  <br>
+  
+  <button mat-flat-button (click)="Ingresar()">
+      Login
+  </button>
 </div>
