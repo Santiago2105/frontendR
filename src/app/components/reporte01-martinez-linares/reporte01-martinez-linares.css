@@ -1,0 +1,77 @@
+/* Contenedor principal para centrar todo y dar margen superior */
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Título con tu color oscuro */
+.titulo-reporte {
+    text-align: center;
+    color: var(--color4); /* Naranja oscuro */
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Flexbox para poner gráfico y tabla lado a lado */
+.contenedor-reporte {
+    display: flex;
+    flex-wrap: wrap; /* Permite que baje a una columna en celulares */
+    justify-content: center; /* Centra los elementos */
+    gap: 30px; /* Espacio entre gráfico y tabla */
+    align-items: flex-start;
+}
+
+/* Estilo común para las tarjetas */
+.card-reporte {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    border-top: 5px solid var(--color1); /* Borde superior naranja bonito */
+}
+
+/* Ajuste de anchos */
+.grafico {
+    flex: 1 1 400px; /* Crece, se encoge, base 400px */
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.tabla {
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+/* Centrar el gráfico SVG dentro de su tarjeta */
+.contenido-grafico {
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Evita que el gráfico rompa el diseño */
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+.mi-tabla {
+    width: 100%;
+}
+
+/* Cabecera de la tabla con tus colores */
+th.mat-mdc-header-cell {
+    background-color: var(--color1) !important; /* Naranja Principal */
+    color: white !important;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Filas */
+td.mat-mdc-cell {
+    color: black;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+/* Hover en filas para efecto moderno */
+tr.mat-mdc-row:hover {
+    background-color: var(--color5); /* Amarillo claro al pasar el mouse */
+}

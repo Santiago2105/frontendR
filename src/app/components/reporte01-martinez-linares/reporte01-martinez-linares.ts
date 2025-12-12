@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ReporteDTO } from '../../models/reporteDTO';
 import { CancionService } from '../../services/cancion-service';
 import { ChartPoint } from '../../models/charPoint';
+import { Color, ScaleType } from '@swimlane/ngx-charts'; // Importa estos tipos
 
 @Component({
   selector: 'app-reporte01-martinez-linares',
@@ -10,11 +11,17 @@ import { ChartPoint } from '../../models/charPoint';
   styleUrl: './reporte01-martinez-linares.css',
 })
 export class Reporte01MartinezLinares {
-displayedColumns: string[] = ['nombreAlbum', 'duracionTotal'];
+  displayedColumns: string[] = ['nombreAlbum', 'duracionTotal'];
   dataSource: ReporteDTO[] = [];
+  chartData: ChartPoint[] = [];
 
-  // Gráfico (Simple, como tu profesor)
-  chartData: ChartPoint[] = []; 
+  // Configuración de colores para el gráfico usando tu paleta
+  colorScheme: Color = {
+    name: 'miPaletaExamen',
+    selectable: true,
+    group: ScaleType.Ordinal,
+    domain: ['#FC9726', '#FC7226', '#FCCF26', '#FCB526', '#FCE926'] // Tus colores HEX
+  };
 
   constructor(private cancionService: CancionService) {}
 
@@ -22,8 +29,6 @@ displayedColumns: string[] = ['nombreAlbum', 'duracionTotal'];
     this.cancionService.getReporte().subscribe({
       next: (data) => {
         this.dataSource = data;
-
-        // Convertir datos para el gráfico
         this.chartData = data.map(item => ({
             name: item.nombreAlbum,
             value: item.duracionTotal
