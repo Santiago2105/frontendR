@@ -6,12 +6,18 @@
           <mat-label>Username</mat-label>
           <mat-icon matPrefix>person</mat-icon>
           <input matInput formControlName="username" placeholder="Ingrese usuario">
+          <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+            El usuario es <strong>obligatorio</strong>
+          </mat-error>
       </mat-form-field>
       
       <mat-form-field class="ancho-total" appearance="outline">
           <mat-label>Password</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
           <input type="password" matInput formControlName="password" placeholder="********">        
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            La contraseña es <strong>obligatoria</strong>
+          </mat-error>
       </mat-form-field>
   </form>
 

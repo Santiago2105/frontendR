@@ -1,4 +1,7 @@
-/* src/styles.css */
+/* 1. IMPORTANTE: Esta línea conecta tu tema de Angular Material */
+@import 'custom-theme.scss';
+
+/* 2. Tus variables globales de colores */
 :root {
     --color1: #FC9726; /* Naranja Principal (Header) */
     --color2: #FCCF26; /* Amarillo (Hover/Iconos) */
@@ -7,5 +10,6 @@
     --color5: #FCE926; /* Amarillo Claro */
 }
 
+/* 3. Estilos base */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
