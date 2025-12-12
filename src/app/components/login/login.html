@@ -1,0 +1,25 @@
+<div class="login-container">
+  
+  <h1>Login</h1>
+
+<form [formGroup]="loginForm">
+
+<mat-form-field class="ancho-total">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+          <input matInput formControlName="username" placeholder="example@example.com">
+      </mat-form-field>
+      
+      <br>
+
+      <mat-form-field class="ancho-total">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input type="password" matInput formControlName="password" placeholder="********">        
+      </mat-form-field>
+</form>
+
+<br>
+ | 
+<button mat-flat-button (click)="Ingresar()" >Ingresar</button>
+</div>

@@ -1,0 +1,13 @@
+<mat-toolbar style="background-color:#BDB8E0;">
+    <a style="cursor: pointer; color:white" routerLink="/home"><mat-icon>home</mat-icon></a>
+    <a style="cursor: pointer; color:white" routerLink="/reports"><mat-icon>description</mat-icon></a>
+    <h1 style="color: white;"><b></b></h1>
+    <span class="example-spacer"></span>
+    <div *ngIf="HayUsuario()">
+        <span style="font-size: 14px;">
+            Username: {{ username }} - Rol: {{ role }}
+        </span>
+        <span style="color:#BDB8E0;">...</span>
+    <a style="cursor: pointer; color:white" (click)="Logout()"><mat-icon>logout</mat-icon></a>
+    </div>
+</mat-toolbar>
