@@ -14,7 +14,7 @@ export class Header {
   username: string = '';
   role: string = '';
   private destroy$ = new Subject<void>();
-constructor(private userService:UserService, private router:Router){}
+  constructor(private userService:UserService, private router:Router){}
 
 ngOnInit(): void {
     this.actualizarInfoUsuario();

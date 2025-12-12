@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+:root {
+    --color1: #FC9726; /* Naranja Principal (Header) */
+    --color2: #FCCF26; /* Amarillo (Hover/Iconos) */
+    --color3: #FCB526; /* Mostaza (Fondos secundarios) */
+    --color4: #FC7226; /* Naranja Oscuro (Botones/Títulos) */
+    --color5: #FCE926; /* Amarillo Claro */
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
